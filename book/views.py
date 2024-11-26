@@ -10,17 +10,8 @@ def index(request):
     bb = book.objects.all()
     return render(request, 'index.html', locals())
 
+def onebook(request, id):
+    b = book.objects.get(id=id)
+    return render(request, 'onebook.html', locals())
 
-def harrypotter(request):
-    # return HttpResponse("我是哈利波特")
 
-    user = {'name':'devin', 'age':25, 'place':'高雄'}
-    return render(request, "harrypotter.html", user)
-
-def lordofring(request):
-    # return HttpResponse("我是魔戒~!")
-    user = {'name':'Wenzao', 'age':35, 'place':'台北'}
-    return render(request, 'lordofring.html', user)
-
-def janeeyre(request):
-    return render(request, 'janeeyre.html')
